@@ -71,11 +71,7 @@ nixpkgs.overlays = [ inputs.bfdisplay-rs.overlays.default ];
 # makes pkgs.bfdisplay-rs available
 ```
 
-Then apply, e.g. in Nixvim:
-```nix
-programs.nixvim.extraPlugins = [ pkgs.bfdisplay-rs ];
-programs.nixvim.extraConfigLua = ''require("bfDisplay-rs").setup()'';
-```
+Then just apply to your config
 
 ### Option 3 - Manual Download
 
@@ -179,8 +175,8 @@ return {
 
 ### Home Manager Module
 
-If you use [nixvim](https://github.com/nix-community/nixvim), you can configure the plugin through its
-Home Manager module:
+If you use [nixvim](https://github.com/nix-community/nixvim), you can configure the plugin declaratively 
+through its Home Manager module:
 
 ```nix
 programs.nixvim = {
